@@ -1,0 +1,37 @@
+{
+  "name": "ultrapoint-nodejs",
+  "version": "3.2.2",
+  "description": "a Node.js ultrapoint wallet manager",
+  "main": "./lib/wallet.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ultrapoint/ultrapoint-nodejs.git"
+  },
+  "keywords": [
+    "ultrapoint",
+    "crypto",
+    "currency",
+    "poloniex",
+    "shapeshift",
+    "cryptocurrency",
+    "Node.js",
+    "simplewallet",
+    "bitcoin",
+    "monero",
+    "ultrapointd"
+  ],
+  "author": "Tindo N. Arsel <devtnga@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ultrapoint/ultrapoint-nodejs/issues"
+  },
+  "homepage": "https://github.com/ultrapoint/ultrapoint-nodejs#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "should": "^8.3.0"
+  }
+}
