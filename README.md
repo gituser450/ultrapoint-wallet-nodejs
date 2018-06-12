@@ -1,6 +1,6 @@
-# ultrapoint-nodejs
+# ultrapoint-wallet-nodejs
 
-A Node.js wallet manager for interacting with Ultrapoint's simplewallet over JSON-RPC. 
+A Node.js wallet manager for interacting with `ultrapoint-wallet-rpc` over JSON-RPC. 
 
 For more information about Ultrapoint, visit: https://ultrapoint.org
 
@@ -13,13 +13,13 @@ UPX: `7Ey8jHDkWqYDSpoSssv5EmAcsXCct4hum4mhHxT6ruaof9C7JM1ekjsYFa8dQEUL4QMai15akL
 ### via NPM
 
 ```sh
-npm install ultrapoint-nodejs
+npm install ultrapoint-wallet
 ```
 
 ### Or clone the Github repository
 
 ```sh
-git clone https://github.com/ultrapoint/ultrapoint-nodejs.git
+git clone https://github.com/ultrapoint/ultrapoint-wallet-nodejs.git
 ```
 
 ## Initializing a wallet
@@ -27,7 +27,7 @@ git clone https://github.com/ultrapoint/ultrapoint-nodejs.git
 Require the module:
 
 ```js
-let UltrapointWallet = require('ultrapoint-nodejs');
+let UltrapointWallet = require('ultrapoint-wallet');
 ```
 
 Create a new instance of the wallet:
@@ -36,7 +36,7 @@ Create a new instance of the wallet:
 let wallet = new UltrapointWallet();
 ```
 
-This creates a wallet using the following simplewallet default RPC settings:
+This creates a wallet using the following `ultrapoint-wallet-rpc` default RPC settings:
    
 * `hostname` - '127.0.0.1'
 * `port` - 17092
@@ -51,11 +51,11 @@ $wallet = new UltrapointWallet($HOSTNAME, $PORT, $USERNAME, $PASSWORD);
 
 ```
 
-**Note: versions of ultrapoint-nodejs prior to 3.0 require `hostname` with the 'http://' prefix, 3.0 and greater only require the IP address.**
+**Note: versions of ultrapoint-wallet-nodejs prior to 3.0 require `hostname` with the 'http://' prefix, 3.0 and greater only require the IP address.**
 
 ## Testing
 
-Some basic tests can now be run locally to verify the library and your simplewallet instance are communicating. The tests assume simplewallet will be listening at the default config settings. Tests are run via mocha.
+Some basic tests can now be run locally to verify the library and your `ultrapoint-wallet-rpc` instance are communicating. The tests assume RPC wallet will be listening at the default config settings. Tests are run via mocha.
 To run the tests, clone the repository and then:
     
     npm install
@@ -423,4 +423,4 @@ Usage:
 wallet.stopWallet();
 ```
 
-Cleanly shuts down the current simplewallet process.
+Cleanly shuts down the current `ultrapoint-wallet-rpc` process.
