@@ -27,7 +27,7 @@ git clone https://github.com/ultrapoint/ultrapoint-wallet-nodejs.git
 Require the module:
 
 ```js
-let UltrapointWallet = require('ultrapoint-wallet');
+const UltrapointWallet = require('ultrapoint-wallet');
 ```
 
 Create a new instance of the wallet:
@@ -96,7 +96,7 @@ ultrapoint-wallet-rpc --password "$wallet_password" --wallet-file $wallet_filepa
 
 ### Multi-wallets usage
 
-```bash
+```sh
 ultrapoint-wallet-rpc --password "$wallet_password" --wallet-file $wallet_filepath --rpc-bind-port 17092 --rpc-bind-ip $external_ip --daemon-host $external_ip --confirm-external-bind --rpc-login 'upxrpc_user:rpc_password' --wallet-dir $wallet_dirpath
 ```
 
@@ -109,7 +109,6 @@ Usage:
 
 ```js
 // used when rpc wallet is started with `--wallet-dir` option
-
 
 wallet.createWallet('upx_wallet', 'ultrapoint', 'English');
 ```
@@ -199,7 +198,7 @@ Transfers Ultrapoint to a single recipient OR a group of recipients in a single 
 
 Parameters:
 
-* `options` - an array containing: 
+* `options` - an object with the following properties (*optional*): 
 
 ```js
 {
