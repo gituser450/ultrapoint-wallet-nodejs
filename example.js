@@ -1,35 +1,56 @@
-var ultrapointWallet = require('./lib/wallet');
-var Wallet = new ultrapointWallet();
+const UltrapointWallet = require('./lib/wallet');
+
+let wallet = new UltrapointWallet();
+
+// //# or with rpc authentification needed
+ 
+// let wallet = new UltrapointWallet('127.0.0.1', 17092, 'upxrpcuser', 'passwdrpc');
 
 // examples
 
-// Wallet.integratedAddress().then(function(result){
+// //# used when rpc wallet is started with `--wallet-dir` option
+
+// wallet.createWallet('upx_testy', 'testy').then((result) => {
 //     console.log(result);
 // });
 
-// Wallet.balance().then(function(response){
+// wallet.openWallet('upx_testy', 'testy').then((result) => {
+//     console.log(result);
+// });
+
+// //#
+
+// wallet.makeIntegratedAddress().then((result) => {
+//     console.log(result);
+// });
+
+// wallet.getBalance().then((response) => {
 //     console.log(response);
 // });
 //
-// Wallet.address().then(function(response){
+// wallet.getAddress().then((response) => {
 //     console.log(response);
 // });
 //
-// Wallet.height().then(function(height){
+// wallet.getHeight().then((height) => {
 //     console.log(height);
 // });
 //
-Wallet.incomingTransfers('all').then(function(result){
-    console.log(result);
+// wallet.incomingTransfers('all').then((result) => {
+//     console.log(result);
+// });
+
+// wallet.getBalance().then((result) => {
+//     console.log(result);
+// });
+
+var body = {
+    destinations: {
+        address: '7Ey8jHDkWqYDSpoSssv5EmAcsXCct4hum4mhHxT6ruaof9C7JM1ekjsYFa8dQEUL4QMai15akL2az2Me48ShgNMWV3yBkSV',
+        amount: 1
+    }
+};
+
+wallet.transfer(body).then((result) => {
+   console.log(result);
 });
-
-//var destination = {};
-//destination.address = '47Vmj6BXSRPax69cVdqVP5APVLkcxxjjXdcP9fJWZdNc5mEpn3fXQY1CFmJDvyUXzj2Fy9XafvUgMbW91ZoqwqmQ6RjbVtp';
-//destination.amount = 1;
-//
-//Wallet.transfer(destination).then(function(result){
-//    console.log(result);
-//});
-
-
-
